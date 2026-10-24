@@ -1,4 +1,4 @@
 #pragma once
 
-__global__ void saxpy(const size_t n, const int a, int *sum, const int *x,
-                      const int *y);
+__global__ void saxpy(const size_t n, const float a, float *sum, const float *x,
+                      const float *y);

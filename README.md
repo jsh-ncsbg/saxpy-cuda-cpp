@@ -1,6 +1,6 @@
 # saxpy-cuda
 
-A comparison of integer SAXPY implementations in C++ and CUDA.
+A comparison of SAXPY implementations in C++ and CUDA.
 
 SAXPY is defined as:
 
@@ -32,43 +32,43 @@ C++ execution times were recorded using `gprof`, while CUDA kernel times were ob
   <tbody>
     <tr>
       <td>2^24</td>
-      <td align="right">6.00</td>
-      <td align="right">33.55</td>
-      <td align="right">0.5252</td>
-      <td align="right">0.8963</td>
-      <td align="right">0.5543</td>
-      <td align="right">363.21</td>
-      <td align="right">10.82x</td>
+      <td align="right">6.50</td>
+      <td align="right">30.97</td>
+      <td align="right">0.5267</td>
+      <td align="right">0.8618</td>
+      <td align="right">0.5554</td>
+      <td align="right">362.49</td>
+      <td align="right">11.70x</td>
     </tr>
     <tr>
       <td>2^26</td>
-      <td align="right">25.50</td>
-      <td align="right">31.58</td>
-      <td align="right">2.1037</td>
-      <td align="right">2.4895</td>
-      <td align="right">2.1805</td>
-      <td align="right">369.32</td>
-      <td align="right">11.69x</td>
+      <td align="right">27.00</td>
+      <td align="right">29.83</td>
+      <td align="right">2.1402</td>
+      <td align="right">2.4918</td>
+      <td align="right">2.1931</td>
+      <td align="right">367.20</td>
+      <td align="right">12.31x</td>
     </tr>
     <tr>
       <td>2^28</td>
-      <td align="right">104.50</td>
-      <td align="right">30.83</td>
-      <td align="right">8.4888</td>
-      <td align="right">9.6282</td>
-      <td align="right">8.8029</td>
-      <td align="right">365.93</td>
-      <td align="right">11.87x</td>
+      <td align="right">113.50</td>
+      <td align="right">28.38</td>
+      <td align="right">8.4455</td>
+      <td align="right">9.1478</td>
+      <td align="right">8.6284</td>
+      <td align="right">373.33</td>
+      <td align="right">13.15x</td>
     </tr>
     <tr>
       <td>2^29</td>
-      <td align="right">214.50</td>
-      <td align="right">30.03</td>
-      <td align="right">17.0454</td>
-      <td align="right">17.8048</td>
-      <td align="right">17.4111</td>
-      <td align="right">370.02</td>
-      <td align="right">12.32x</td>
+      <td align="right">228.50</td>
+      <td align="right">28.19</td>
+      <td align="right">17.1380</td>
+      <td align="right">17.7690</td>
+      <td align="right">17.3662</td>
+      <td align="right">370.98</td>
+      <td align="right">13.16x</td>
     </tr>
   </tbody>
 </table>

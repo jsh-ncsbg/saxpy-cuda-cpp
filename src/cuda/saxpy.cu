@@ -1,7 +1,7 @@
 #include "saxpy.cuh"
 
-__global__ void saxpy(const size_t n, const int a, int *const sum,
-                      const int *const x, const int *const y) {
+__global__ void saxpy(const size_t n, const float a, float *const sum,
+                      const float *const x, const float *const y) {
     const size_t index = blockIdx.x * blockDim.x + threadIdx.x;
     const size_t stride = blockDim.x * gridDim.x;
 
