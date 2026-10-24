@@ -60,6 +60,16 @@ C++ execution times were recorded using `gprof`, while CUDA kernel times were ob
       <td align="right">365.93</td>
       <td align="right">11.87x</td>
     </tr>
+    <tr>
+      <td>2^29</td>
+      <td align="right">214.50</td>
+      <td align="right">30.03</td>
+      <td align="right">17.0454</td>
+      <td align="right">17.8048</td>
+      <td align="right">17.4111</td>
+      <td align="right">370.02</td>
+      <td align="right">12.32x</td>
+    </tr>
   </tbody>
 </table>
 
