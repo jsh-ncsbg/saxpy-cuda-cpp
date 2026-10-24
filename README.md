@@ -84,3 +84,9 @@ From the repository root, run either version:
 Each script builds the program, runs it, and prints the profiler results. `mx_err=0` means the output matches the expected values.
 
 `N` is hard-coded to `1 << 28`. To try another size, change it in `src/cpp/benchmark.cpp` or `src/cuda/benchmark.cu` and rerun the corresponding script.
+
+## References
+
+- [An Even Easier Introduction to CUDA (Updated)](https://developer.nvidia.com/blog/even-easier-introduction-cuda/)
+- [Six Ways to SAXPY](https://developer.nvidia.com/blog/six-ways-saxpy/)
+- [Introduction to the CUDA Programming Language, Lecture 4 (PDF)](https://users.wfu.edu/choss/CUDA/docs/Lecture%204.pdf)
