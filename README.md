@@ -12,19 +12,14 @@ $$
 
 C++ execution times are measured using `std::chrono::steady_clock`, while CUDA kernel times are obtained using `nsys stats`. Each input size is run for 20 iterations.
 
+### C++
+
+The C++ implementation was compiled with `-O3` and `-march=native`.
+
 <table align="center">
   <thead>
     <tr>
-      <th rowspan="2" scope="col">N</th>
-      <th colspan="4" scope="colgroup">C++</th>
-      <th colspan="4" scope="colgroup">CUDA</th>
-      <th rowspan="2" scope="col">Speedup</th>
-    </tr>
-    <tr>
-      <th scope="col">Min (ms)</th>
-      <th scope="col">Max (ms)</th>
-      <th scope="col">Avg (ms)</th>
-      <th scope="col">GB/s</th>
+      <th scope="col">N</th>
       <th scope="col">Min (ms)</th>
       <th scope="col">Max (ms)</th>
       <th scope="col">Avg (ms)</th>
@@ -38,11 +33,6 @@ C++ execution times are measured using `std::chrono::steady_clock`, while CUDA k
       <td align="right">47.7746</td>
       <td align="right">6.7031</td>
       <td align="right">30.03</td>
-      <td align="right">0.5267</td>
-      <td align="right">0.8618</td>
-      <td align="right">0.5554</td>
-      <td align="right">362.49</td>
-      <td align="right">12.07x</td>
     </tr>
     <tr>
       <td>2^26</td>
@@ -50,11 +40,6 @@ C++ execution times are measured using `std::chrono::steady_clock`, while CUDA k
       <td align="right">189.6998</td>
       <td align="right">27.5240</td>
       <td align="right">29.26</td>
-      <td align="right">2.1402</td>
-      <td align="right">2.4918</td>
-      <td align="right">2.1931</td>
-      <td align="right">367.20</td>
-      <td align="right">12.55x</td>
     </tr>
     <tr>
       <td>2^28</td>
@@ -62,11 +47,6 @@ C++ execution times are measured using `std::chrono::steady_clock`, while CUDA k
       <td align="right">895.5790</td>
       <td align="right">125.4924</td>
       <td align="right">25.67</td>
-      <td align="right">8.4455</td>
-      <td align="right">9.1478</td>
-      <td align="right">8.6284</td>
-      <td align="right">373.33</td>
-      <td align="right">14.54x</td>
     </tr>
     <tr>
       <td>2^29</td>
@@ -74,16 +54,94 @@ C++ execution times are measured using `std::chrono::steady_clock`, while CUDA k
       <td align="right">1704.9702</td>
       <td align="right">244.4849</td>
       <td align="right">26.35</td>
-      <td align="right">17.1380</td>
-      <td align="right">17.7690</td>
-      <td align="right">17.3662</td>
-      <td align="right">370.98</td>
-      <td align="right">14.08x</td>
     </tr>
   </tbody>
 </table>
 
-The C++ implementation was compiled with `-O3` and `-march=native`. CUDA used 256 blocks with 256 threads per block. In local tests, performance gains plateaued as the number of blocks and threads per block was increased.
+### CUDA
+
+CUDA used 256 blocks with 256 threads per block. In local tests, performance gains plateaued as the number of blocks and threads per block was increased.
+
+<table align="center">
+  <thead>
+    <tr>
+      <th scope="col">N</th>
+      <th scope="col">Min (ms)</th>
+      <th scope="col">Max (ms)</th>
+      <th scope="col">Avg (ms)</th>
+      <th scope="col">GB/s</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2^24</td>
+      <td align="right">0.5267</td>
+      <td align="right">0.8618</td>
+      <td align="right">0.5554</td>
+      <td align="right">362.49</td>
+    </tr>
+    <tr>
+      <td>2^26</td>
+      <td align="right">2.1402</td>
+      <td align="right">2.4918</td>
+      <td align="right">2.1931</td>
+      <td align="right">367.20</td>
+    </tr>
+    <tr>
+      <td>2^28</td>
+      <td align="right">8.4455</td>
+      <td align="right">9.1478</td>
+      <td align="right">8.6284</td>
+      <td align="right">373.33</td>
+    </tr>
+    <tr>
+      <td>2^29</td>
+      <td align="right">17.1380</td>
+      <td align="right">17.7690</td>
+      <td align="right">17.3662</td>
+      <td align="right">370.98</td>
+    </tr>
+  </tbody>
+</table>
+
+### C++ vs CUDA
+
+<table align="center">
+  <thead>
+    <tr>
+      <th scope="col">N</th>
+      <th scope="col">C++ Avg (ms)</th>
+      <th scope="col">CUDA Avg (ms)</th>
+      <th scope="col">Speedup</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2^24</td>
+      <td align="right">6.7031</td>
+      <td align="right">0.5554</td>
+      <td align="right">12.07x</td>
+    </tr>
+    <tr>
+      <td>2^26</td>
+      <td align="right">27.5240</td>
+      <td align="right">2.1931</td>
+      <td align="right">12.55x</td>
+    </tr>
+    <tr>
+      <td>2^28</td>
+      <td align="right">125.4924</td>
+      <td align="right">8.6284</td>
+      <td align="right">14.54x</td>
+    </tr>
+    <tr>
+      <td>2^29</td>
+      <td align="right">244.4849</td>
+      <td align="right">17.3662</td>
+      <td align="right">14.08x</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Running locally
 
