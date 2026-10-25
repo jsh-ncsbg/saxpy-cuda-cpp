@@ -1,6 +1,10 @@
 #include <algorithm>
+#include <array>
+#include <chrono>
 #include <cmath>
+#include <iomanip>
 #include <iostream>
+#include <numeric>
 
 #include "saxpy.hpp"
 
@@ -32,10 +36,26 @@ int main(void) {
         expected_out[i] = a * x[i] + y[i];
     }
 
-    // run kernel
+    std::array<double, iterations> elapsed_ms;
     for (size_t i = 0; i < iterations; i++) {
+        const auto start = std::chrono::steady_clock::now();
         saxpy(N, a, out, x, y);
+        const auto end = std::chrono::steady_clock::now();
+        elapsed_ms[i] =
+            std::chrono::duration<double, std::milli>(end - start).count();
     }
+
+    const auto min_max =
+        std::minmax_element(elapsed_ms.begin(), elapsed_ms.end());
+    const double avg_ms =
+        std::accumulate(elapsed_ms.begin(), elapsed_ms.end(), 0.0) / iterations;
+
+    std::cout << std::fixed << std::setprecision(6)
+              << "iterations=" << iterations << '\n'
+              << "min_ms=" << *min_max.first << '\n'
+              << "max_ms=" << *min_max.second << '\n'
+              << "avg_ms=" << avg_ms << '\n'
+              << std::defaultfloat;
 
     // verify output
     float mx_err = max_diff(N, out, expected_out);
