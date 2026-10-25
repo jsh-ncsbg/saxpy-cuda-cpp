@@ -29,31 +29,31 @@ The C++ implementation was compiled with `-O3` and `-march=native`.
   <tbody>
     <tr>
       <td>2^24</td>
-      <td align="right">4.2353</td>
-      <td align="right">47.7746</td>
-      <td align="right">6.7031</td>
-      <td align="right">30.03</td>
+      <td align="right">4.3659</td>
+      <td align="right">5.5394</td>
+      <td align="right">4.5244</td>
+      <td align="right">44.50</td>
     </tr>
     <tr>
       <td>2^26</td>
-      <td align="right">18.2805</td>
-      <td align="right">189.6998</td>
-      <td align="right">27.5240</td>
-      <td align="right">29.26</td>
+      <td align="right">18.3375</td>
+      <td align="right">19.1574</td>
+      <td align="right">18.6802</td>
+      <td align="right">43.11</td>
     </tr>
     <tr>
       <td>2^28</td>
-      <td align="right">81.2766</td>
-      <td align="right">895.5790</td>
-      <td align="right">125.4924</td>
-      <td align="right">25.67</td>
+      <td align="right">74.1643</td>
+      <td align="right">76.7411</td>
+      <td align="right">75.3874</td>
+      <td align="right">42.73</td>
     </tr>
     <tr>
       <td>2^29</td>
-      <td align="right">154.8696</td>
-      <td align="right">1704.9702</td>
-      <td align="right">244.4849</td>
-      <td align="right">26.35</td>
+      <td align="right">150.1940</td>
+      <td align="right">156.0003</td>
+      <td align="right">152.1992</td>
+      <td align="right">42.33</td>
     </tr>
   </tbody>
 </table>
@@ -118,27 +118,27 @@ CUDA used 256 blocks with 256 threads per block. In local tests, performance gai
   <tbody>
     <tr>
       <td>2^24</td>
-      <td align="right">6.7031</td>
+      <td align="right">4.5244</td>
       <td align="right">0.5554</td>
-      <td align="right">12.07x</td>
+      <td align="right">8.15x</td>
     </tr>
     <tr>
       <td>2^26</td>
-      <td align="right">27.5240</td>
+      <td align="right">18.6802</td>
       <td align="right">2.1931</td>
-      <td align="right">12.55x</td>
+      <td align="right">8.52x</td>
     </tr>
     <tr>
       <td>2^28</td>
-      <td align="right">125.4924</td>
+      <td align="right">75.3874</td>
       <td align="right">8.6284</td>
-      <td align="right">14.54x</td>
+      <td align="right">8.74x</td>
     </tr>
     <tr>
       <td>2^29</td>
-      <td align="right">244.4849</td>
+      <td align="right">152.1992</td>
       <td align="right">17.3662</td>
-      <td align="right">14.08x</td>
+      <td align="right">8.76x</td>
     </tr>
   </tbody>
 </table>

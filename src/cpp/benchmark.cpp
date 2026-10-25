@@ -29,6 +29,8 @@ int main(void) {
     out = new float[N];
     expected_out = new float[N];
 
+    std::fill(out, out + N, 0);
+
     // initialize x and y
     for (size_t i = 0; i < N; i++) {
         x[i] = 10.0f;
