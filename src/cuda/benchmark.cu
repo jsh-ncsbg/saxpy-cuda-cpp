@@ -41,7 +41,7 @@ int main(void) {
     cudaMemcpy(d_y, y, N * sizeof(float), cudaMemcpyHostToDevice);
 
     const int numThreads = 256;
-    const int numBlocks = 256;
+    const int numBlocks = (N + numThreads - 1) / numThreads;
 
     // run kernel
     for (size_t i = 0; i < iterations; i++) {

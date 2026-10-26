@@ -60,7 +60,7 @@ The C++ implementation was compiled with `-O3` and `-march=native`.
 
 ### CUDA
 
-CUDA used 256 blocks with 256 threads per block. In local tests, performance gains plateaued as the number of blocks and threads per block was increased.
+CUDA used `(N + numThreads - 1) / numThreads` blocks with 256 threads per block.
 
 <table align="center">
   <thead>
@@ -75,31 +75,31 @@ CUDA used 256 blocks with 256 threads per block. In local tests, performance gai
   <tbody>
     <tr>
       <td>2^24</td>
-      <td align="right">0.5267</td>
-      <td align="right">0.8618</td>
-      <td align="right">0.5554</td>
-      <td align="right">362.49</td>
+      <td align="right">0.4915</td>
+      <td align="right">0.5799</td>
+      <td align="right">0.5101</td>
+      <td align="right">394.70</td>
     </tr>
     <tr>
       <td>2^26</td>
-      <td align="right">2.1402</td>
-      <td align="right">2.4918</td>
-      <td align="right">2.1931</td>
-      <td align="right">367.20</td>
+      <td align="right">1.9571</td>
+      <td align="right">2.3164</td>
+      <td align="right">2.0200</td>
+      <td align="right">398.68</td>
     </tr>
     <tr>
       <td>2^28</td>
-      <td align="right">8.4455</td>
-      <td align="right">9.1478</td>
-      <td align="right">8.6284</td>
-      <td align="right">373.33</td>
+      <td align="right">8.0023</td>
+      <td align="right">8.3739</td>
+      <td align="right">8.0915</td>
+      <td align="right">398.10</td>
     </tr>
     <tr>
       <td>2^29</td>
-      <td align="right">17.1380</td>
-      <td align="right">17.7690</td>
-      <td align="right">17.3662</td>
-      <td align="right">370.98</td>
+      <td align="right">16.0188</td>
+      <td align="right">16.6541</td>
+      <td align="right">16.2161</td>
+      <td align="right">397.29</td>
     </tr>
   </tbody>
 </table>
@@ -119,26 +119,26 @@ CUDA used 256 blocks with 256 threads per block. In local tests, performance gai
     <tr>
       <td>2^24</td>
       <td align="right">4.5244</td>
-      <td align="right">0.5554</td>
-      <td align="right">8.15x</td>
+      <td align="right">0.5101</td>
+      <td align="right">8.87x</td>
     </tr>
     <tr>
       <td>2^26</td>
       <td align="right">18.6802</td>
-      <td align="right">2.1931</td>
-      <td align="right">8.52x</td>
+      <td align="right">2.0200</td>
+      <td align="right">9.25x</td>
     </tr>
     <tr>
       <td>2^28</td>
       <td align="right">75.3874</td>
-      <td align="right">8.6284</td>
-      <td align="right">8.74x</td>
+      <td align="right">8.0915</td>
+      <td align="right">9.32x</td>
     </tr>
     <tr>
       <td>2^29</td>
       <td align="right">152.1992</td>
-      <td align="right">17.3662</td>
-      <td align="right">8.76x</td>
+      <td align="right">16.2161</td>
+      <td align="right">9.39x</td>
     </tr>
   </tbody>
 </table>
