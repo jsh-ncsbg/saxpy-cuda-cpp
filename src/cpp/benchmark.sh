@@ -1,4 +1,4 @@
 #!/bin/bash
 
-g++ -O3 -march=native -pg ./*.cpp -o saxpy
+g++ -O3 -march=native ./*.cpp -o saxpy
 ./saxpy
